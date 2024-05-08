@@ -6,7 +6,8 @@ function Form(props) {
   const [welcomeMessage, setWelcomeMessage] = useState("");
   const handleSubmit = (e) => {
     setWelcomeMessage(`Benvingut ${firstName} ${lastName}!`);
-    e.preventDefault(); // Necessari per evitar que el form es refresqui
+    props.setPlacesDisponibles(props.placesActuals - 1);
+    e.preventDefault();
   };
 
   return (
